@@ -9,7 +9,7 @@ export const HomeHeader = ({
   city = '',
   onCityPress,
   onGetValue,
-  locationData, 
+  locationData = [],  
   refRB,
 }) => {
   // console.log(city, onCityPress, onGetValue);

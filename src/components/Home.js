@@ -60,8 +60,6 @@ const Home = ({ navigation }) => {
     const [city, setCity] = useState('');
     const [unitId, setUnitId] = useState('');
 
-    console.log('jhsgdaufusy',currentRegionSelected);
-
     useEffect(() => {
       const fetchData = async () => {
         try {
