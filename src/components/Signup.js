@@ -82,17 +82,16 @@ const Signup = ({ route, navigation }) => {
 
   const nextButtonValidation = () => {
     if (
-      !patientName || 
-      !selectedDate || 
-      !genderValue || 
-      (pinCode && pinCode.length !== 6)
+      patientName === '' ||
+      selectedDate === '' ||
+      genderValue === '' ||
+      pinCode.length !== 6
     ) {
       setSignUpState(false);
     } else {
       setSignUpState(true);
     }
   };
-  
 
   const handleSubmit = async event => {
     event.preventDefault();
@@ -184,7 +183,8 @@ const Signup = ({ route, navigation }) => {
             <input
               type="text"
               placeholder="Enter location"
-              onChange={handleSearchChange}
+              value={locationSearchResult} // Controlled input
+              onChange={handleSearchChange} // Handle search change
               style={styles.searchInput}
             />
             <ul style={styles.searchResults}>
@@ -263,7 +263,7 @@ const Signup = ({ route, navigation }) => {
               required
               style={styles.input}
             />
-            <button onClick={() => setIsLocationModalOpen(true)} type="button" style={styles.searchButton}>
+            <button type="button" onClick={() => setIsLocationModalOpen(true)} style={styles.searchButton}>
               Search
             </button>
           </div>
